@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "flash-focus:build:production"
+              "buildTarget": "flash-focus:build:production"
             },
             "development": {
-              "browserTarget": "flash-focus:build:development"
+              "buildTarget": "flash-focus:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "flash-focus:build"
+            "buildTarget": "flash-focus:build"
           }
         },
         "test": {
