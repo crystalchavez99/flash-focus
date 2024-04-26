@@ -1,11 +1,17 @@
 <div class="generic-page">
   <div class="container-fluid">
     <div class="container">
-      <img src="{{logo}}" alt="Flash Focus">
-      <p-tabMenu [model]="items" class="custom-tabmenu"></p-tabMenu>
+      <img src="{{ logo }}" alt="Flash Focus" class="cursor-pointer" />
+      <p-tabMenu
+        [model]="items"
+        class="custom-tabmenu cursor-pointer"
+      ></p-tabMenu>
     </div>
-  <div>
-    <router-outlet></router-outlet>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="footer">
+
+    </div>
   </div>
-</div>
 </div>
