@@ -2,10 +2,19 @@
   <div class="container-fluid">
     <div class="container">
       <img src="{{ logo }}" alt="Flash Focus" class="cursor-pointer" />
-      <p-tabMenu
-        [model]="items"
-        class="custom-tabmenu cursor-pointer"
-      ></p-tabMenu>
+      <div class="card">
+        <p-tabMenu [model]="items">
+          <ng-template pTemplate="item" let-item>
+            <ng-container>
+              <a [routerLink]="item.route" class="p-menuitem-link">
+                <span class="ml-2">
+                  {{ item.label }}
+              </span>
+              </a>
+            </ng-container>
+          </ng-template>
+          </p-tabMenu>
+    </div>
     </div>
     <div class="container-fluid">
       <router-outlet></router-outlet>

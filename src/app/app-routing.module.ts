@@ -2,21 +2,28 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { PrimaryLayoutComponent } from './layout/primary-layout/primary-layout.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
-    pathMatch:'full',
+    pathMatch:'prefix',
     component: PrimaryLayoutComponent,
     children: [
       {
         path: '',
-        component: HomeComponent
+        pathMatch:'full',
+        component: HomeComponent,
       },
       {
         path: 'login',
-        redirectTo: ''
-      }
+        pathMatch:'full',
+        component: LoginComponent
+      },
+      // {
+      //   path: 'signup',
+      //   pathMatch: 'full'
+      // }
     ]
   }
 ];

@@ -1,31 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 
 @Component({
   selector: 'app-primary-layout',
   templateUrl: './primary-layout.component.html',
   styleUrl: './primary-layout.component.scss',
+  standalone: true,
+  imports: [TabMenuModule]
+
 })
 export class PrimaryLayoutComponent implements OnInit {
-  items: MenuItem[] | undefined = [
-    // { label: '', icon: '../../assets/logo.png'},
-    { label: 'Home', url: "" },
-    {
-      label: 'Subjects', expanded: true,
-      // items: [
-      //   { label: 'Submenu Item 1' },
-      //   { label: 'Submenu Item 2' },
-      //   { label: 'Submenu Item 3' }
-      // ]
-    },
-    { label: 'Create' },
-    { label: 'Log In', },
-    { label: 'Sign Up' }
-  ]
+  items: MenuItem[] | undefined;
 
   logo = "../../assets/logo.png";
-  ngOnInit(): void {
-    console.log(`init`)
+
+
+  ngOnInit() {
+    this.items= [
+      { label: 'Home', route: '/'},
+      { label: 'Subjects', route: '/subjects'},
+      { label: 'Create',  route: '/create'},
+      { label: 'Log In', route: '/login'},
+      { label: 'Sign Up', route: '/signup'}
+    ]
   }
 }
