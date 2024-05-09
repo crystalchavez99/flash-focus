@@ -1,0 +1,26 @@
+<div class="generic-page">
+  <div class="container-fluid">
+    <div class="container">
+      <img src="{{ logo }}" alt="Flash Focus" class="cursor-pointer" />
+      <div class="card">
+        <p-tabMenu [model]="items">
+          <ng-template pTemplate="item" let-item>
+            <ng-container>
+              <a [routerLink]="item.route" class="p-menuitem-link">
+                <span class="ml-2">
+                  {{ item.label }}
+              </span>
+              </a>
+            </ng-container>
+          </ng-template>
+          </p-tabMenu>
+    </div>
+    </div>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="footer border-top-2">
+      <span>© 2024 Flash Focus, Inc.</span>
+    </div>
+  </div>
+</div>

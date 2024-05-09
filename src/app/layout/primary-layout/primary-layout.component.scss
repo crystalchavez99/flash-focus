@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+  border-bottom: 2px solid #e5e7eb;
+
+  img{
+    width: 3rem;
+    height: 100%;
+  }
+
+  .menu{
+    border: 1px solid redl
+  }
+}
+
+.footer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3.5rem;
+  margin-bottom: 0;
+  padding: 1rem;
+}
