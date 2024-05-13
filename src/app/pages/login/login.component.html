@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="container grid">
+  <div class="banner col">
+    <img
+      src="https://res.cloudinary.com/dreambssd/image/upload/v1714081511/banner_qcrnqh.jpg"
+      alt="Blackboard"
+      class="image"
+    />
+    <div class="text-overlay">
+      <span>Experience a new era of AI-enhanced learning</span>
+      <p>
+        Flash Focus is more than flashcards: it’s the #1 global learning
+        platform.
+      </p>
+    </div>
+  </div>
+  <div class="form col" pFocusTrap>
+    <div class="form-tabs border-bottom-2">
+      <h3>Login</h3>
+      <h3>Signup</h3>
+    </div>
+    <form
+      [formGroup]="formGroup"
+      class="border-round-sm border-1 surface-border"
+
+    >
+      <p-floatLabel>
+        <input pInputText id="username" formControlName="username" />
+        <label for="username">Username</label>
+      </p-floatLabel>
+      <p-floatLabel>
+        <p-password formControlName="password" [toggleMask]="true" />
+        <label for="password">Password</label>
+      </p-floatLabel>
+    </form>
+  </div>
+</div>

@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimaryLayoutComponent } from './layout/primary-layout/primary-layout.component';
-import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [
