@@ -3,26 +3,26 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { PasswordModule } from 'primeng/password';
+import { AuthService } from '@auth0/auth0-angular';
+
 
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, InputTextModule, FloatLabelModule,PasswordModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
 
-  formGroup!: FormGroup;
+ // formGroup!: FormGroup;
+
+  constructor(public auth: AuthService) {}
 
 
     ngOnInit() {
-        this.formGroup = new FormGroup({
-          username: new FormControl(),
-          password: new FormControl()
-        });
+        console.log(`init login`)
     }
 
 }
