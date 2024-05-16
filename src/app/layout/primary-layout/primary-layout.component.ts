@@ -35,6 +35,7 @@ export class PrimaryLayoutComponent implements OnInit{
         { label: 'Home', route: '/'},
         { label: 'Subjects', route: '/subjects'},
         { label: 'Create',  route: '/create'},
+        { label: 'Profile', route: '/user'},
         { label: 'Log Out', command: () => {
           this.auth.logout({
             logoutParams: {
