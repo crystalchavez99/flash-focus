@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Flashcard } from '../flashcard';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { supabaseKey, supabaseUrl } from 'src/environments/environment';
+import { Observable,from } from 'rxjs';
 
 
 @Injectable({
@@ -12,10 +13,13 @@ export class FlashcardService {
 
   constructor() {
     this.supabase = createClient(supabaseUrl,supabaseKey);
+    console.log(this.supabase)
   }
 
-  async getFlashcards() {
+  async getFlashcards()  {
     let { data, error } = await this.supabase.from('flashcards').select('*');
+
+    console.log(data)
 
     if (error) {
       console.error(error);
@@ -25,8 +29,9 @@ export class FlashcardService {
   }
 
   async addFlashCard(flashcard: Flashcard){
+    console.log(flashcard)
     let { data, error } = await this.supabase.from('flashcards').insert(flashcard);
-
+    console.log(data, `ADDED`)
     if (error) {
       console.error(error);
     }

@@ -6,6 +6,7 @@ import { AuthComponent } from './pages/auth/auth.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SubjectsComponent } from './pages/subjects/subjects.component';
 import { CreationComponent } from './pages/creation/creation.component';
+import { ListCardsComponent } from './pages/list-cards/list-cards.component';
 const routes: Routes = [
   {
     path: '',
@@ -31,6 +32,11 @@ const routes: Routes = [
         path: 'create',
         pathMatch: 'full',
         component: CreationComponent
+      },
+      {
+        path: 'flashcards',
+        pathMatch: 'full',
+        component: ListCardsComponent
       }
       // {
       //   path: 'signup',

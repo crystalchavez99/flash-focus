@@ -1,1 +1,13 @@
-<p>list-cards works!</p>
+<div>
+  <h3>All Flashcards</h3>
+  <div *ngFor="let flashcard of flashcards">
+    <div>
+      <h3>{{flashcard.question}}</h3>
+      <p>{{flashcard.answer}}</p>
+    </div>
+    <div>
+      <p-button label="Delete" severity="danger" (onClick)="deleteFlashcard(flashcard.id)"/>
+      <p-button label="Edit" severity="secondary" (onClick)="editFlashcard()"/>
+    </div>
+  </div>
+</div>

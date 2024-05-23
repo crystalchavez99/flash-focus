@@ -4,7 +4,7 @@
     <div class="text-overlay">
       <span>Experience a new era of AI-enhanced learning</span>
       <p>Flash Focus is more than flashcards: it’s the #1 global learning platform.</p>
-      <div>
+      <div *ngIf="!isAuthenticated">
         <p-button label="Sign Up"></p-button>
       </div>
     </div>

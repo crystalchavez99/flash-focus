@@ -36,6 +36,7 @@ export class PrimaryLayoutComponent implements OnInit{
         { label: 'Subjects', route: '/subjects'},
         { label: 'Create',  route: '/create'},
         { label: 'Profile', route: '/user'},
+        { label: 'Flashcards', route: '/flashcards'},
         { label: 'Log Out', command: () => {
           this.auth.logout({
             logoutParams: {
@@ -48,6 +49,7 @@ export class PrimaryLayoutComponent implements OnInit{
       this.items = [
         { label: 'Home', route: '/'},
         { label: 'Subjects', route: '/subjects'},
+        { label: 'Flashcards', route: '/flashcards'},
         { label: 'Log In', command: () => this.auth.loginWithRedirect()},
       ]
    }

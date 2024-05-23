@@ -1,1 +1,20 @@
-<p>creation works!</p>
+<form (ngSubmit)="flashcardForm()">
+  <div>
+    <label>Question</label>
+    <input type="text" [(ngModel)]="flashcard.question" name="question" required>
+  </div>
+  <div>
+    <label>Answer</label>
+    <input type="text" [(ngModel)]="flashcard.answer" name="answer" required>
+  </div>
+  <button
+    pButton
+    pRipple
+    type="submit"
+    class="p-button-success"
+
+    >
+  Submit
+</button>
+
+</form>
