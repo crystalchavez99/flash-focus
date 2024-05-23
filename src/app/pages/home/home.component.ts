@@ -24,4 +24,8 @@ export class HomeComponent {
       this.isAuthenticated = authenticated;
     });
   }
+
+  signUp(){
+    this.auth.loginWithRedirect();
+  }
 }

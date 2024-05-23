@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 import { ButtonModule } from 'primeng/button';
 import { Flashcard } from 'src/app/shared/flashcard';
 import { FlashcardService } from 'src/app/shared/services/flashcard.service';
@@ -14,11 +15,19 @@ import { FlashcardService } from 'src/app/shared/services/flashcard.service';
 })
 export class ListCardsComponent implements OnInit{
 
+  public auth = inject(AuthService);
+  isAuthenticated: boolean = false;
+
   flashcards: any[] | null | undefined= [];
 
-  constructor(private flashcardService: FlashcardService, private router: Router){}
+  constructor(private flashcardService: FlashcardService, private router: Router){
+    this.auth.isAuthenticated$.subscribe(authenitcate =>{
+      this.isAuthenticated = authenitcate;
+    })
+  }
 
   ngOnInit(){
+    console.log(this.auth.isAuthenticated$)
     this.flashcardService.getFlashcards().then(flashcards =>{
       console.log(flashcards)
       this.flashcards = flashcards;

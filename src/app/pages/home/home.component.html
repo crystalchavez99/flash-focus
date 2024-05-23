@@ -5,7 +5,7 @@
       <span>Experience a new era of AI-enhanced learning</span>
       <p>Flash Focus is more than flashcards: it’s the #1 global learning platform.</p>
       <div *ngIf="!isAuthenticated">
-        <p-button label="Sign Up"></p-button>
+        <p-button label="Sign Up" (onClick)="signUp()"></p-button>
       </div>
     </div>
   </div>
