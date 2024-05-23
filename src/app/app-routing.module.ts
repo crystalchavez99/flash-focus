@@ -18,11 +18,6 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path: 'login',
-        pathMatch:'full',
-        component: AuthComponent
-      },
-      {
         path: 'user',
         pathMatch: 'full',
         component: ProfileComponent

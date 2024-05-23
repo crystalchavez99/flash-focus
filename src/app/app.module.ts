@@ -19,9 +19,9 @@ import { PrimaryLayoutComponent } from './layout/primary-layout/primary-layout.c
       authorizationParams: {
         redirect_uri: window.location.origin
       }
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{}
