@@ -16,7 +16,10 @@ import { FlashcardService } from 'src/app/shared/services/flashcard.service';
 export class ListCardsComponent implements OnInit{
 
   public auth = inject(AuthService);
+
   isAuthenticated: boolean = false;
+  
+  userId: string = "";
 
   flashcards: any[] | null | undefined= [];
 
@@ -27,9 +30,16 @@ export class ListCardsComponent implements OnInit{
   }
 
   ngOnInit(){
-    console.log(this.auth.isAuthenticated$)
-    this.flashcardService.getFlashcards().then(flashcards =>{
-      console.log(flashcards)
+    this.auth.user$.subscribe(user => {
+      if (user) {
+        if(user.sub) this.userId = user.sub;
+        this.loadFlashcards();
+      }
+    });
+  }
+
+  loadFlashcards(){
+    this.flashcardService.getFlashcards(this.userId).then(flashcards =>{
       this.flashcards = flashcards;
     })
   }

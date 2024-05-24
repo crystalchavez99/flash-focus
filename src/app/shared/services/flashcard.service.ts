@@ -13,13 +13,10 @@ export class FlashcardService {
 
   constructor() {
     this.supabase = createClient(supabaseUrl,supabaseKey);
-    console.log(this.supabase)
   }
 
-  async getFlashcards()  {
-    let { data, error } = await this.supabase.from('flashcards').select('*');
-
-    console.log(data)
+  async getFlashcards(userId: string)  {
+    let { data, error } = await this.supabase.from('flashcards').select('*').eq('userId', userId);
 
     if (error) {
       console.error(error);
@@ -29,13 +26,10 @@ export class FlashcardService {
   }
 
   async addFlashCard(flashcard: Flashcard){
-    console.log(flashcard)
     let { data, error } = await this.supabase.from('flashcards').insert(flashcard);
-    console.log(data, `ADDED`)
     if (error) {
       console.error(error);
     }
-
     return data;
   }
 

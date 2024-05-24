@@ -33,7 +33,7 @@ export class PrimaryLayoutComponent implements OnInit{
     if(authenticated){
       this.items =  [
         { label: 'Home', route: '/'},
-        { label: 'Subjects', route: '/subjects'},
+        // { label: 'Subjects', route: '/subjects'},
         { label: 'Create',  route: '/create'},
         { label: 'Profile', route: '/user'},
         { label: 'Flashcards', route: '/flashcards'},
@@ -48,8 +48,8 @@ export class PrimaryLayoutComponent implements OnInit{
     }else{
       this.items = [
         { label: 'Home', route: '/'},
-        { label: 'Subjects', route: '/subjects'},
-        { label: 'Flashcards', route: '/flashcards'},
+        // { label: 'Subjects', route: '/subjects'},
+        // { label: 'Flashcards', route: '/flashcards'},
         { label: 'Log In', command: () => this.auth.loginWithRedirect()},
       ]
    }
