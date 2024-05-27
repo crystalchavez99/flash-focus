@@ -1,27 +1,31 @@
 <div class="container">
   <div *ngIf="user" class="user-profile">
     <div class="left-side">
-     <div class="welcome-banter">
-       <h2>Welcome, {{ user.name }}</h2>
-     </div>
+      <div class="welcome-banter">
+        <h2>Welcome, {{ user.name }}</h2>
+      </div>
 
-     <!-- GitHub-specific information -->
-     <div *ngIf="isGitHubUser()">
-       <h3>GitHub Profile</h3>
-       <p>GitHub Username: {{ user.nickname }}</p>
-       <p>GitHub Profile: <a [href]="user.profile" target="_blank">{{ user.profile }}</a></p>
-     </div>
+      <!-- GitHub-specific information -->
+      <div *ngIf="isGitHubUser()">
+        <h3>GitHub Profile</h3>
+        <p>GitHub Username: {{ user.nickname }}</p>
+        <p>GitHub Email: {{ user.email }}</p>
+        <p>Last Updated: {{userUpdate}}</p>
+      </div>
 
-     <!-- Google-specific information -->
-     <div *ngIf="isGoogleUser()">
-       <h3>Google Profile</h3>
-       <p>Google Name: {{ user.name }}</p>
-       <p>Google Email: {{ user.email }}</p>
-       <p>Locale: {{ user.locale }}</p>
-     </div>
+      <!-- Google-specific information -->
+      <div *ngIf="isGoogleUser()">
+        <h3>Google Profile</h3>
+        <p>Google Name: {{ user.name }}</p>
+        <p>Google Email: {{ user.email }}</p>
+        <p>Locale: {{ user.locale }}</p>
+      </div>
     </div>
     <div class="right-side">
-     <img *ngIf="userPic" [src]="userPic" alt="Profile Picture">
+      <img *ngIf="userPic" [src]="userPic" alt="Profile Picture" />
     </div>
-   </div>
+  </div>
+  <div class="user-flashcards">
+    <app-list-cards></app-list-cards>
+  </div>
 </div>

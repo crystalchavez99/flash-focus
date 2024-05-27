@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { MenuItem } from 'primeng/api';
 import { TabMenuModule } from 'primeng/tabmenu';
@@ -10,8 +10,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
   templateUrl: './primary-layout.component.html',
   styleUrl: './primary-layout.component.scss',
   standalone: true,
-  imports: [TabMenuModule]
-
+  imports: [TabMenuModule],
 })
 export class PrimaryLayoutComponent implements OnInit{
 
@@ -36,7 +35,7 @@ export class PrimaryLayoutComponent implements OnInit{
         // { label: 'Subjects', route: '/subjects'},
         { label: 'Create',  route: '/create'},
         { label: 'Profile', route: '/user'},
-        { label: 'Flashcards', route: '/flashcards'},
+        // { label: 'Flashcards', route: '/flashcards'},
         { label: 'Log Out', command: () => {
           this.auth.logout({
             logoutParams: {

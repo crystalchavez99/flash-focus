@@ -15,7 +15,7 @@ export class FlashcardService {
     this.supabase = createClient(supabaseUrl,supabaseKey);
   }
 
-  async getFlashcards(userId: string)  {
+  async getFlashcards(userId?: string)  {
     let { data, error } = await this.supabase.from('flashcards').select('*').eq('userId', userId);
 
     if (error) {

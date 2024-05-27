@@ -1,13 +1,33 @@
-<div>
+<div class="container">
   <h3>All Flashcards</h3>
   <div *ngFor="let flashcard of flashcards">
-    <div>
+    <!-- <div class="flashcard">
       <h3>{{flashcard.question}}</h3>
       <p>{{flashcard.answer}}</p>
-    </div>
-    <div *ngIf="isAuthenticated">
-      <p-button label="Delete" severity="danger" (onClick)="deleteFlashcard(flashcard.id)"/>
-      <p-button label="Edit" severity="secondary" (onClick)="editFlashcard()"/>
-    </div>
+    </div> -->
+    <p-card class="flashcard">
+      <p class="m-0">
+        {{ flashcard.question }}
+      </p>
+      <p class="m-0">
+        {{ flashcard.answer }}
+      </p>
+      <div class="flex gap-3 mt-1">
+        <p-button
+        label="Delete"
+        severity="danger"
+        (onClick)="deleteFlashcard(flashcard.id)"
+      />
+      <p-button label="Edit" severity="secondary" (onClick)="editFlashcard()" />
+      </div>
+    </p-card>
+    <!-- <div *ngIf="isAuthenticated">
+      <p-button
+        label="Delete"
+        severity="danger"
+        (onClick)="deleteFlashcard(flashcard.id)"
+      />
+      <p-button label="Edit" severity="secondary" (onClick)="editFlashcard()" />
+    </div> -->
   </div>
 </div>

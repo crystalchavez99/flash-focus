@@ -86,7 +86,7 @@ export class CreationComponent implements OnInit{
         console.log('error', error);
       });
     }
-    this.router.navigate(['/flashcards'])
+    this.router.navigate(['/user'])
   }
 
   // errorHandler(error: any){
