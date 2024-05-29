@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  width: 100%;
+
+  .user-profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    width: 80%;
+
+    .left-side {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .right-side {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .right-side img {
+      max-width: 10rem;
+      border-radius: 50%;
+    }
+
+  }
+
+  .user-flashcards{
+    width: 100%;
+  }
+
+}

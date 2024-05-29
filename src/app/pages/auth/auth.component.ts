@@ -25,13 +25,8 @@ export class AuthComponent {
     public auth: AuthService
   ) {}
 
-
-    ngOnInit() {
-    }
-
     login() {
       this.auth.loginWithRedirect();
-      console.log(this.auth)
     }
 
     logout() {

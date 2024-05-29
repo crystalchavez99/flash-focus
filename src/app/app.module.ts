@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AuthModule } from '@auth0/auth0-angular';
+import { AuthModule, AuthService } from '@auth0/auth0-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimaryLayoutComponent } from './layout/primary-layout/primary-layout.component';
@@ -19,9 +19,9 @@ import { PrimaryLayoutComponent } from './layout/primary-layout/primary-layout.c
       authorizationParams: {
         redirect_uri: window.location.origin
       }
-    })
+    }),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{}

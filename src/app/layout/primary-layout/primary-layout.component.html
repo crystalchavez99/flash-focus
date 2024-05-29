@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="container">
       <img src="{{ logo }}" alt="Flash Focus" class="cursor-pointer" />
-      <div class="card">
+      <div class="menu">
         <p-tabMenu [model]="items">
           <ng-template pTemplate="item" let-item>
             <ng-container>
@@ -16,7 +16,7 @@
           </p-tabMenu>
     </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid main">
       <router-outlet></router-outlet>
     </div>
     <div class="footer border-top-2">
