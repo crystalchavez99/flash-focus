@@ -1,28 +1,33 @@
 <div class="container">
   <h3>All Flashcards</h3>
-  <div *ngFor="let flashcard of flashcards">
-    <!-- <div class="flashcard">
+  <div class="flashcard-list">
+    <div *ngFor="let flashcard of flashcards" class="flashcard-container">
+      <!-- <div class="flashcard">
       <h3>{{flashcard.question}}</h3>
       <p>{{flashcard.answer}}</p>
     </div> -->
-    <p-card class="flashcard">
-      <p class="m-0" id="question">
-        {{ flashcard.question }}
-      </p>
-      <p class="m-0" id="answer">
-        {{ flashcard.answer }}
-      </p>
-      <div class="flex gap-3 mt-1">
-        <p-button (onClick)="speak()">Speak</p-button>
-        <p-button
-        label="Delete"
-        severity="danger"
-        (onClick)="deleteFlashcard(flashcard.id)"
-      />
-      <p-button label="Edit" severity="secondary" (onClick)="editFlashcard()" />
-      </div>
-    </p-card>
-    <!-- <div *ngIf="isAuthenticated">
+      <p-card class="flashcard">
+        <p class="m-0" id="question">
+          {{ flashcard.question }}
+        </p>
+        <p class="m-0" id="answer">
+          {{ flashcard.answer }}
+        </p>
+        <div class="flex gap-3 mt-1">
+          <p-button (onClick)="speak()">Speak</p-button>
+          <p-button
+            label="Delete"
+            severity="danger"
+            (onClick)="deleteFlashcard(flashcard.id)"
+          />
+          <p-button
+            label="Edit"
+            severity="secondary"
+            (onClick)="editFlashcard()"
+          />
+        </div>
+      </p-card>
+      <!-- <div *ngIf="isAuthenticated">
       <p-button
         label="Delete"
         severity="danger"
@@ -30,5 +35,6 @@
       />
       <p-button label="Edit" severity="secondary" (onClick)="editFlashcard()" />
     </div> -->
+    </div>
   </div>
 </div>
