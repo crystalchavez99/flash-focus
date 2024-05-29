@@ -27,11 +27,12 @@ export class ListCardsComponent implements OnInit{
 
   flashcards: any[] | null | undefined;
 
+  isFlipped = false;
+
   constructor(private flashcardService: FlashcardService, private router: Router, private loadingService: LoadingService, private textspeech: TextToSpeechService){
     this.loadingService.show();
     this.auth.isAuthenticated$.subscribe(authenitcate =>{
       this.isAuthenticated = authenitcate;
-
     })
   }
 
@@ -51,6 +52,7 @@ export class ListCardsComponent implements OnInit{
     this.flashcardService.getFlashcards(this.userId).then(flashcards =>{
       this.flashcards = flashcards;
     })
+    this.flashcards?.map(fc => fc.isFlipped = false)
   }
 
   deleteFlashcard(id: string){
@@ -63,13 +65,18 @@ export class ListCardsComponent implements OnInit{
     this.router.navigate(['/create'])
   }
 
-  speak(){
-    const textElement = document.getElementById('question');
-    const text = textElement ? textElement.innerText : '';
-
+  speak(text: string, event: MouseEvent){
+   event.stopPropagation();
     if(text){
       this.textspeech.speak(text)
     }
+  }
+
+  toggleFlip(i: number) {
+    if(this.flashcards) {
+      this.flashcards[i].isFlipped = !this.flashcards[i].isFlipped;
+    }
+
   }
 
 }

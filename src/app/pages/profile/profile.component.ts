@@ -28,7 +28,6 @@ export class ProfileComponent {
     this.auth.user$.subscribe(
       (profile) => {
         this.user = profile;
-        console.log(this.user)
         this.userUpdate = this.datePipe.transform(this.user.updated_at, 'yyyy-MM-dd');
         this.loadingService.hide();
       },
