@@ -6,13 +6,14 @@
       <p>{{flashcard.answer}}</p>
     </div> -->
     <p-card class="flashcard">
-      <p class="m-0">
+      <p class="m-0" id="question">
         {{ flashcard.question }}
       </p>
-      <p class="m-0">
+      <p class="m-0" id="answer">
         {{ flashcard.answer }}
       </p>
       <div class="flex gap-3 mt-1">
+        <p-button (onClick)="speak()">Speak</p-button>
         <p-button
         label="Delete"
         severity="danger"

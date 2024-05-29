@@ -26,6 +26,7 @@ export class FlashcardService {
   }
 
   async addFlashCard(flashcard: Flashcard){
+    console.log(flashcard)
     let { data, error } = await this.supabase.from('flashcards').insert(flashcard);
     if (error) {
       console.error(error);

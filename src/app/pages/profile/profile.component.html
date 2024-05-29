@@ -1,3 +1,4 @@
+<app-loading-screen></app-loading-screen>
 <div class="container">
   <div *ngIf="user" class="user-profile">
     <div class="left-side">
@@ -17,8 +18,10 @@
       <div *ngIf="isGoogleUser()">
         <h3>Google Profile</h3>
         <p>Google Name: {{ user.name }}</p>
+        <p>Google Nickname: {{ user.nickname }}</p>
         <p>Google Email: {{ user.email }}</p>
         <p>Locale: {{ user.locale }}</p>
+        <p>Last Updated: {{userUpdate}}</p>
       </div>
     </div>
     <div class="right-side">

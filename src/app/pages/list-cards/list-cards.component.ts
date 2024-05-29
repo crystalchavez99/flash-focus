@@ -5,6 +5,8 @@ import { AuthService } from '@auth0/auth0-angular';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { FlashcardService } from 'src/app/shared/services/flashcard.service';
+import { LoadingService } from 'src/app/shared/services/loading.service';
+import { TextToSpeechService } from 'src/app/shared/services/text-to-speech.service';
 
 @Component({
   selector: 'app-list-cards',
@@ -25,26 +27,28 @@ export class ListCardsComponent implements OnInit{
 
   flashcards: any[] | null | undefined;
 
-  constructor(private flashcardService: FlashcardService, private router: Router){
+  constructor(private flashcardService: FlashcardService, private router: Router, private loadingService: LoadingService, private textspeech: TextToSpeechService){
+    this.loadingService.show();
     this.auth.isAuthenticated$.subscribe(authenitcate =>{
       this.isAuthenticated = authenitcate;
+
     })
   }
 
   ngOnInit(){
+    this.loadingService.show();
     this.auth.user$.subscribe(user => {
       if (user) {
         if(user.sub) this.userId = user.sub;
         this.loadFlashcards();
+        this.loadingService.hide();
       }
     });
-    console.log(this.flashcards)
 
   }
 
   loadFlashcards(){
     this.flashcardService.getFlashcards(this.userId).then(flashcards =>{
-      console.log(flashcards)
       this.flashcards = flashcards;
     })
   }
@@ -57,6 +61,15 @@ export class ListCardsComponent implements OnInit{
 
   editFlashcard(){
     this.router.navigate(['/create'])
+  }
+
+  speak(){
+    const textElement = document.getElementById('question');
+    const text = textElement ? textElement.innerText : '';
+
+    if(text){
+      this.textspeech.speak(text)
+    }
   }
 
 }
