@@ -36,3 +36,6 @@ jobs:
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
           npm run build --prod
+          # Substitute environment variables in the build output
+          sed -i 's#SUPABASE_URL_PLACEHOLDER#${{ secrets.SUPABASE_URL }}#g' dist/flash-focus/*.js
+          sed -i 's#SUPABASE_KEY_PLACEHOLDER#${{ secrets.SUPABASE_KEY }}#g' dist/flash-focus/*.js
