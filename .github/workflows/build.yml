@@ -1,41 +1,19 @@
-name: FlashFocus Build
+name: Test and Deploy
 
-# {1}
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
     branches: [ "main" ]
-
 jobs:
-  build:
+  test:
+    name: Test
     runs-on: ubuntu-latest
+
     steps:
-      # {2}
-      - name: Checkout the source code
-        uses: actions/checkout@v3
-
-      # {3}
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: 'npm'
-          cache-dependency-path: package-lock.json
-
-      # {4}
-      - name: Install dependencies
-        run: npm ci
-      # {5}
-      # - name: Run tests
-      #   run: npm run test
-      # {6}
-      - name: Build the project
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: |
-          npm run build --prod
-          # Substitute environment variables in the build output
-          sed -i 's#SUPABASE_URL_PLACEHOLDER#${{ secrets.SUPABASE_URL }}#g' dist/flash-focus/*.js
-          sed -i 's#SUPABASE_KEY_PLACEHOLDER#${{ secrets.SUPABASE_KEY }}#g' dist/flash-focus/*.js
+          node-version: 18.x
+      - run: npm ci
+      - run: npm test

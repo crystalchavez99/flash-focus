@@ -4,7 +4,7 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from '../../../environments/environment';
 
 const supabaseUrl = environment.supabaseUrl;
-const supabaseKey = environment.supabaseKey;import { Observable,from } from 'rxjs';
+const supabaseKey = environment.supabaseKey;
 
 
 @Injectable({
@@ -28,7 +28,6 @@ export class FlashcardService {
   }
 
   async addFlashCard(flashcard: Flashcard){
-    console.log(flashcard)
     let { data, error } = await this.supabase.from('flashcards').insert(flashcard);
     if (error) {
       console.error(error);
