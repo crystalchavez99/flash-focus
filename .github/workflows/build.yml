@@ -8,23 +8,18 @@ on:
     branches: [ "main" ]
 
 jobs:
-  angular:
-    name: FlashFocus Build
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       # {2}
       - name: Checkout the source code
         uses: actions/checkout@v3
 
       # {3}
-      - name: Setup Node.js $
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: $
+          node-version: 18
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
