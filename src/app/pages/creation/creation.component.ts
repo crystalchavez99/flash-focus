@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -7,7 +7,6 @@ import { Flashcard } from 'src/app/shared/flashcard';
 import { FlashcardService } from 'src/app/shared/services/flashcard.service';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
-import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoadingService } from 'src/app/shared/services/loading.service';
 @Component({
