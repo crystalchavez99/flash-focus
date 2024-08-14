@@ -19,3 +19,6 @@ jobs:
       - run: npm ci
       - name: Build Containers with Nixpacks and
         uses: iloveitaly/github-action-nixpacks@v1.0
+        env:
+          SUPABASEKEY: ${{ secrets.SUPABASEKEY }}  # Example of using GitHub Secrets
+          SUPABASEURL: ${{ secrets.SUPABASEURL }}
