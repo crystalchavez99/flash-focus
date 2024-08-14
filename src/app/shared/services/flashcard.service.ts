@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Flashcard } from '../flashcard';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { environment } from 'src/environments/enviroment';
 
-const supabaseUrl = process.env['supabaseUrl'] || '';
-const supabaseKey = process.env['supabaseKey'] || '';
+const supabaseUrl = environment.supabaseUrl;
+const supabaseKey = environment.supabaseKey;
 
 
 @Injectable({
