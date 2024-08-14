@@ -17,4 +17,5 @@ jobs:
         with:
           node-version: 18.x
       - run: npm ci
-      # - run: npm test
+      - name: Build Containers with Nixpacks and
+        uses: iloveitaly/github-action-nixpacks@v1.0
