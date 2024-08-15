@@ -4,6 +4,8 @@ import { AuthModule, AuthService } from '@auth0/auth0-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimaryLayoutComponent } from './layout/primary-layout/primary-layout.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { PrimaryLayoutComponent } from './layout/primary-layout/primary-layout.c
       }
     }),
   ],
-  providers: [AuthService],
+  providers: [AuthService, provideAnimations()],
   bootstrap: [AppComponent]
 })
 export class AppModule{}

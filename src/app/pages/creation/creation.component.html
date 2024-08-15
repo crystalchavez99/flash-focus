@@ -5,7 +5,7 @@
       (ngSubmit)="flashcardForm()"
       class="text-center border-round border-1 surface-border p-4"
     >
-      <div class="formgroup-inline align-items-baseline">
+      <div class="form">
         <div class="field flex align-items-center">
           <label>Question</label>
           <textarea
@@ -28,6 +28,17 @@
             [autoResize]="true"
           >
           </textarea>
+        </div>
+
+        <div>
+
+        <p-dropdown
+        [options]="subjects"
+        [(ngModel)]="selectedSubject"
+        name="subject"
+        optionLabel="subject"
+        placeholder="Select a Subject"
+        required />
         </div>
           <button pButton pRipple type="submit" class="p-button-success">
             Submit

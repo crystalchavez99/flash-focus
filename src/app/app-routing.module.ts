@@ -8,6 +8,10 @@ import { SubjectsComponent } from './pages/subjects/subjects.component';
 import { CreationComponent } from './pages/creation/creation.component';
 import { ListCardsComponent } from './pages/list-cards/list-cards.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { MathComponent } from './pages/subjects/math/math.component';
+import { EnglishComponent } from './pages/subjects/english/english.component';
+import { ScienceComponent } from './pages/subjects/science/science.component';
+import { HistoryComponent } from './pages/subjects/history/history.component';
 const routes: Routes = [
   {
     path: '',
@@ -28,8 +32,28 @@ const routes: Routes = [
       {
         path: 'subjects',
         pathMatch: 'full',
-        component: SubjectsComponent
+        component: SubjectsComponent,
       },
+        {
+          path: 'subjects/Math',
+          pathMatch:'full',
+          component: MathComponent
+        },
+        {
+          path: 'subjects/English',
+          pathMatch:'full',
+          component: EnglishComponent
+        },
+        {
+          path: 'subjects/Science',
+          pathMatch:'full',
+          component: ScienceComponent
+        },
+        {
+          path: 'subjects/History',
+          pathMatch:'full',
+          component: HistoryComponent
+        },
       {
         path: 'create',
         pathMatch: 'full',

@@ -3,5 +3,5 @@ export interface Flashcard {
   question: string;
   answer: string;
   userId: string;
-  setId?: string;
+  subjectId?: number;
 }

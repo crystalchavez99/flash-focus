@@ -1,42 +1,26 @@
 <div class="container">
-  <h3>All Flashcards</h3>
-  <div class="grid">
+  <h1>Subject: Science</h1>
+  <h3>Welcome to the world of Science!</h3>
+
+  <div class="subject-list grid">
     <div *ngFor="let flashcard of flashcards; let i = index" class="flashcard-container" >
       <div class="flashcard" [ngClass]="{ 'flipped': flashcard.isFlipped }"  (click)="toggleFlip(i)">
         <div class="m-0" id="question">
           {{ flashcard.question }}
           <div class="flex gap-3 mt-1" id="buttons">
             <p-button (onClick)="speak(flashcard.question, $event)">Speak</p-button>
-            <p-button
-              label="Delete"
-              severity="danger"
-              (onClick)="deleteFlashcard(flashcard.id, $event)"
-            />
-            <!-- <p-button
-              label="Edit"
-              severity="secondary"
-              (onClick)="editFlashcard()"
-            /> -->
           </div>
         </div>
         <div class="m-0" id="answer">
           {{ flashcard.answer }}
           <div class="flex gap-3 mt-1" id="buttons">
             <p-button (onClick)="speak(flashcard.answer, $event)">Speak</p-button>
-            <p-button
-              label="Delete"
-              severity="danger"
-              (onClick)="deleteFlashcard(flashcard.id, $event)"
-            />
-            <!-- <p-button
-              label="Edit"
-              severity="secondary"
-              (onClick)="editFlashcard()"
-            /> -->
           </div>
         </div>
       </div>
 
     </div>
   </div>
+
+
 </div>

@@ -1,1 +1,16 @@
-<p>subjects works!</p>
+<div class="container">
+  <h1>Flash Focus Subjects</h1>
+  <h3>These subjects are a necessity: something your child has to learn in order to be educated.</h3>
+
+  <div class="subject-list grid">
+    <div *ngFor="let subject of subjects; let i = index" class="subject-container col">
+      <div class="p-3 font-bold" class="subject">
+        <p [routerLink]="[subject.subject]" >{{subject.subject}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="future-text">
+    <h3>More specific children subjects to come in the future.</h3>
+  </div>
+</div>

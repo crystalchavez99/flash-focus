@@ -1,0 +1,18 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .subject-list{
+    width: 100%;
+  }
+
+  .subject{
+    background-color: #2d3856;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+
+  }
+}
