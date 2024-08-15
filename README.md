@@ -1,27 +1,58 @@
-# FlashFocus
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+# Flash Focus
 
-## Development server
+Flash Focus is a web-based tool  that helps students learn through flashcards.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Client:** Angular, Typescript, PrimeNg
 
-## Running unit tests
+**Server:** Node, Webpack Dev Server, Supabase
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Light/dark mode toggle
+- 0Auth
+- Text to Speech
+- Create Flashcard
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/crystalchavez99/flash-focus.git
+```
+
+Go to the project directory
+
+```bash
+  cd flash-focus
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  ng serve
+```
+
+
+## Deployment
+
+### Development server
+Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
+
+### Build
+Run `ng build` to build the project. The build artifacts will be stored in the dist/ directory.
