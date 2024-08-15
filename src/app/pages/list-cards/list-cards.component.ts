@@ -55,7 +55,8 @@ export class ListCardsComponent implements OnInit{
     this.flashcards?.map(fc => fc.isFlipped = false)
   }
 
-  deleteFlashcard(id: string){
+  deleteFlashcard(id: string, event: MouseEvent){
+    event.stopPropagation();
     this.flashcardService.deleteFlashCard(id).then(() =>{
       this.flashcards = this.flashcards?.filter(f => f.id !== id);
     })

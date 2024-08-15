@@ -54,4 +54,16 @@ export class FlashcardService {
 
     return data;
   }
+
+  async getFlashCardsBySubjectId(subjectId: number){
+    const { data, error } = await this.supabase
+    .from('flashcards')
+    .select('*')
+    .eq('subjectId', subjectId)
+
+    if (error) {
+      console.error(error);
+    }
+    return data;
+  }
 }
