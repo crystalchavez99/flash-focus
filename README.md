@@ -2,13 +2,12 @@
 # Flash Focus
 
 **Table of Contents**
-- [Open Learn](#open-learn)
+- [Flash Focus](#flash-focus)
   - [Live Link](#live-link)
   - [About the Project](#about-the-project)
   - [Wiki](#wiki)
   - [Technology Stack](#tech-stack)
   - [Features](#features)
-  - [Future Features](#future-features)
  
   
 ## About The Project
@@ -20,9 +19,7 @@ Flash Focus is a web-based tool  that helps students learn through flashcards.
 ## Wiki
 Access Wiki: Click on Wiki Tab or [This Link](https://github.com/crystalchavez99/flash-focus/wiki)
 
-
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-
+LOGO IN PROGRESS
 
 ## Tech Stack
 
